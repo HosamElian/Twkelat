@@ -1,0 +1,11 @@
+E:\FL\TB\TB\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.Core.deps.json
+E:\FL\TB\TB\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.Core.dll
+E:\FL\TB\TB\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.Core.pdb
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.Core.GeneratedMSBuildEditorConfig.editorconfig
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.Core.AssemblyInfoInputs.cache
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.Core.AssemblyInfo.cs
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.Core.csproj.CoreCompileInputs.cache
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.Core.dll
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\refint\Twkelat.Core.dll
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.Core.pdb
+E:\FL\TB\TB\Twkelat\Twkelat.Core\obj\Debug\net8.0\ref\Twkelat.Core.dll

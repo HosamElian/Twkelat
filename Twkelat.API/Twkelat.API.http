@@ -1,0 +1,6 @@
+@Twkelat.API_HostAddress = http://localhost:5299
+
+GET {{Twkelat.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
