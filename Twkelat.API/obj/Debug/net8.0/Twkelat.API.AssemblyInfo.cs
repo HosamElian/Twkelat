@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Twkelat.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+cea0d743a0a50178c9cabd644def5890b9a0e741")]
 [assembly: System.Reflection.AssemblyProductAttribute("Twkelat.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Twkelat.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

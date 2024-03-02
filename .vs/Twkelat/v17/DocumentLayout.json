@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "E:\\FL\\TB\\TB\\Twkelat\\",
+  "WorkspaceRootPath": "E:\\FL\\TK\\Twkelat\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}|Twkelat.Core\\Twkelat.Core.csproj|e:\\fl\\tb\\tb\\twkelat\\twkelat.core\\interfaces\\iblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}|Twkelat.Core\\Twkelat.Core.csproj|solutionrelative:twkelat.core\\interfaces\\iblock.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDD61C8A-4638-484C-B8D1-F7FFFEB89714}|Twkelat.API\\Twkelat.API.csproj|e:\\fl\\tk\\twkelat\\twkelat.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{DDD61C8A-4638-484C-B8D1-F7FFFEB89714}|Twkelat.API\\Twkelat.API.csproj|solutionrelative:twkelat.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}|Twkelat.Core\\Twkelat.Core.csproj|e:\\fl\\tb\\tb\\twkelat\\twkelat.core\\models\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}|Twkelat.Core\\Twkelat.Core.csproj|solutionrelative:twkelat.core\\models\\block.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DDD61C8A-4638-484C-B8D1-F7FFFEB89714}|Twkelat.API\\Twkelat.API.csproj|e:\\fl\\tk\\twkelat\\twkelat.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDD61C8A-4638-484C-B8D1-F7FFFEB89714}|Twkelat.API\\Twkelat.API.csproj|solutionrelative:twkelat.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{469C9756-8D43-44E0-8E00-128569A6EB39}|Twkelat.Persistence\\Twkelat.Persistence.csproj|e:\\fl\\tk\\twkelat\\twkelat.persistence\\consts\\badrequestmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{469C9756-8D43-44E0-8E00-128569A6EB39}|Twkelat.Persistence\\Twkelat.Persistence.csproj|solutionrelative:twkelat.persistence\\consts\\badrequestmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{469C9756-8D43-44E0-8E00-128569A6EB39}|Twkelat.Persistence\\Twkelat.Persistence.csproj|e:\\fl\\tk\\twkelat\\twkelat.persistence\\consts\\resultmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{469C9756-8D43-44E0-8E00-128569A6EB39}|Twkelat.Persistence\\Twkelat.Persistence.csproj|solutionrelative:twkelat.persistence\\consts\\resultmessages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -23,28 +31,51 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "IBlock.cs",
-              "DocumentMoniker": "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Interfaces\\IBlock.cs",
-              "RelativeDocumentMoniker": "Twkelat.Core\\Interfaces\\IBlock.cs",
-              "ToolTip": "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Interfaces\\IBlock.cs",
-              "RelativeToolTip": "Twkelat.Core\\Interfaces\\IBlock.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAowBkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-16T18:04:40.406Z",
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "E:\\FL\\TK\\Twkelat\\Twkelat.API\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Twkelat.API\\Properties\\launchSettings.json",
+              "ToolTip": "E:\\FL\\TK\\Twkelat\\Twkelat.API\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Twkelat.API\\Properties\\launchSettings.json",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACUAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-03-01T11:31:42.156Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Block.cs",
-              "DocumentMoniker": "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Models\\Block.cs",
-              "RelativeDocumentMoniker": "Twkelat.Core\\Models\\Block.cs",
-              "ToolTip": "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Models\\Block.cs",
-              "RelativeToolTip": "Twkelat.Core\\Models\\Block.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAfAAAA",
+              "DocumentIndex": 2,
+              "Title": "BadRequestMessages.cs",
+              "DocumentMoniker": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Consts\\BadRequestMessages.cs",
+              "RelativeDocumentMoniker": "Twkelat.Persistence\\Consts\\BadRequestMessages.cs",
+              "ToolTip": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Consts\\BadRequestMessages.cs",
+              "RelativeToolTip": "Twkelat.Persistence\\Consts\\BadRequestMessages.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAABDAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-16T16:42:39.736Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-01T11:29:06.543Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ResultMessages.cs",
+              "DocumentMoniker": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Consts\\ResultMessages.cs",
+              "RelativeDocumentMoniker": "Twkelat.Persistence\\Consts\\ResultMessages.cs",
+              "ToolTip": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Consts\\ResultMessages.cs",
+              "RelativeToolTip": "Twkelat.Persistence\\Consts\\ResultMessages.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T11:28:41.968Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "E:\\FL\\TK\\Twkelat\\Twkelat.API\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Twkelat.API\\Controllers\\AuthController.cs",
+              "ToolTip": "E:\\FL\\TK\\Twkelat\\Twkelat.API\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Twkelat.API\\Controllers\\AuthController.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAQwBgAAABwAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-01T11:19:32.801Z"
             }
           ]
         }

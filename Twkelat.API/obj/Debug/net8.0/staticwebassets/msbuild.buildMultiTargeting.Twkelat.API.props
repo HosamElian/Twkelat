@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Twkelat.API.props" />
+</Project>

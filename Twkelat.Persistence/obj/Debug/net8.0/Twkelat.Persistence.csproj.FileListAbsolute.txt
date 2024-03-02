@@ -1,0 +1,13 @@
+E:\FL\TK\Twkelat\Twkelat.Persistence\bin\Debug\net8.0\Twkelat.Persistence.deps.json
+E:\FL\TK\Twkelat\Twkelat.Persistence\bin\Debug\net8.0\Twkelat.Persistence.dll
+E:\FL\TK\Twkelat\Twkelat.Persistence\bin\Debug\net8.0\Twkelat.Persistence.pdb
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.csproj.AssemblyReference.cache
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.AssemblyInfoInputs.cache
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.AssemblyInfo.cs
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.csproj.CoreCompileInputs.cache
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.sourcelink.json
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.dll
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\refint\Twkelat.Persistence.dll
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\Twkelat.Persistence.pdb
+E:\FL\TK\Twkelat\Twkelat.Persistence\obj\Debug\net8.0\ref\Twkelat.Persistence.dll

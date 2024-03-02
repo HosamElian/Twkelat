@@ -1,0 +1,26 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs/ProjectEvaluation/twkelat.metadata.v7.bin
+/.vs/ProjectEvaluation/twkelat.projects.v7.bin
+*.config
+*.vsidx
+/.vs/Twkelat/v17/.futdcache.v2
+/Twkelat.Core/obj/Debug/net8.0/Twkelat.Core.AssemblyInfo.cs
+/Twkelat.Core/obj/Debug/net8.0/Twkelat.Core.AssemblyInfoInputs.cache
+/Twkelat.Core/obj/project.assets.json
+/Twkelat.Core/obj/Twkelat.Core.csproj.nuget.dgspec.json
+/.vs/Twkelat/DesignTimeBuild/.dtbcache.v2
+/.vs/Twkelat/FileContentIndex/5182c469-3418-4ed3-b2bb-a7b29b9231a1.vsidx
+/.vs/Twkelat/FileContentIndex/8c98fbc9-8d28-4acb-8a7e-ca2c85a97c29.vsidx
+/.vs/Twkelat/FileContentIndex/952fd78d-acea-4190-9dd8-7879c41ef883.vsidx
+/.vs/Twkelat/FileContentIndex/994e5c9a-662b-40b1-95af-82d1bc5d5613.vsidx
+/.vs/Twkelat/FileContentIndex/c9b424ac-045c-4a37-a1b9-e10096d1c85b.vsidx
+/Twkelat.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Twkelat.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.resources.dll
+/Twkelat.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.CSharp.Workspaces.resources.dll
+/Twkelat.API/bin/Debug/net8.0/cs/Microsoft.CodeAnalysis.Workspaces.resources.dll
+/Twkelat.API/bin/Debug/net8.0/de/Microsoft.CodeAnalysis.CSharp.resources.dll
+/Twkelat.Core/bin/Debug/net8.0/Twkelat.BusinessLogic.dll
+/Twkelat.API/Program.cs

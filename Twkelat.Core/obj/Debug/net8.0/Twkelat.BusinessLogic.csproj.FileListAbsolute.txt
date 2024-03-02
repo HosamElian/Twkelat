@@ -1,0 +1,16 @@
+E:\FL\TK\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.BusinessLogic.deps.json
+E:\FL\TK\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.BusinessLogic.dll
+E:\FL\TK\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.BusinessLogic.pdb
+E:\FL\TK\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.Persistence.dll
+E:\FL\TK\Twkelat\Twkelat.Core\bin\Debug\net8.0\Twkelat.Persistence.pdb
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.csproj.AssemblyReference.cache
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.GeneratedMSBuildEditorConfig.editorconfig
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.AssemblyInfoInputs.cache
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.AssemblyInfo.cs
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.csproj.CoreCompileInputs.cache
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.sourcelink.json
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat..104E20D3.Up2Date
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.dll
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\refint\Twkelat.BusinessLogic.dll
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\Twkelat.BusinessLogic.pdb
+E:\FL\TK\Twkelat\Twkelat.Core\obj\Debug\net8.0\ref\Twkelat.BusinessLogic.dll

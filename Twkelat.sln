@@ -3,9 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34607.119
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twkelat.API", "Twkelat.API\Twkelat.API.csproj", "{DDD61C8A-4638-484C-B8D1-F7FFFEB89714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twkelat.API", "Twkelat.API\Twkelat.API.csproj", "{DDD61C8A-4638-484C-B8D1-F7FFFEB89714}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twkelat.Core", "Twkelat.Core\Twkelat.Core.csproj", "{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twkelat.BusinessLogic", "Twkelat.Core\Twkelat.BusinessLogic.csproj", "{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Twkelat.EF", "Twkelat.EF\Twkelat.EF.csproj", "{9853488A-4A92-4D37-A7B7-CA790D8797B8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Twkelat.Persistence", "Twkelat.Persistence\Twkelat.Persistence.csproj", "{469C9756-8D43-44E0-8E00-128569A6EB39}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +25,14 @@ Global
 		{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE0AA2D6-A54E-4483-9F23-6566BB1CE439}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9853488A-4A92-4D37-A7B7-CA790D8797B8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9853488A-4A92-4D37-A7B7-CA790D8797B8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9853488A-4A92-4D37-A7B7-CA790D8797B8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9853488A-4A92-4D37-A7B7-CA790D8797B8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{469C9756-8D43-44E0-8E00-128569A6EB39}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{469C9756-8D43-44E0-8E00-128569A6EB39}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{469C9756-8D43-44E0-8E00-128569A6EB39}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{469C9756-8D43-44E0-8E00-128569A6EB39}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

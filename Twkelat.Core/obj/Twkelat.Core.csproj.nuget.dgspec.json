@@ -1,17 +1,92 @@
 {
   "format": 1,
   "restore": {
-    "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj": {}
+    "E:\\FL\\TK\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj": {}
   },
   "projects": {
-    "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj": {
+    "E:\\FL\\TK\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj",
+        "projectUniqueName": "E:\\FL\\TK\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj",
         "projectName": "Twkelat.Core",
-        "projectPath": "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj",
+        "projectPath": "E:\\FL\\TK\\Twkelat\\Twkelat.Core\\Twkelat.Core.csproj",
         "packagesPath": "C:\\Users\\star\\.nuget\\packages\\",
-        "outputPath": "E:\\FL\\TB\\TB\\Twkelat\\Twkelat.Core\\obj\\",
+        "outputPath": "E:\\FL\\TK\\Twkelat\\Twkelat.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\star\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Twkelat.Persistence.csproj": {
+                "projectPath": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Twkelat.Persistence.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.200/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Twkelat.Persistence.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Twkelat.Persistence.csproj",
+        "projectName": "Twkelat.Persistence",
+        "projectPath": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\Twkelat.Persistence.csproj",
+        "packagesPath": "C:\\Users\\star\\.nuget\\packages\\",
+        "outputPath": "E:\\FL\\TK\\Twkelat\\Twkelat.Persistence\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -49,6 +124,12 @@
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.2, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
