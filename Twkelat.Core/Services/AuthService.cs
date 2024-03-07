@@ -41,7 +41,7 @@ namespace Twkelat.BusinessLogic.Services
             {
                 UserName = registerModel.Username,
                 Email = registerModel.Email,
-                Image = registerModel.Image,
+                
             };
 
             var result = await _userManager.CreateAsync(user, registerModel.Password);
@@ -77,7 +77,7 @@ namespace Twkelat.BusinessLogic.Services
         public async Task<AuthModelResponse> GetTokenAsync(TokenRequestModel tokenRequestModel)
         {
             var authModel = new AuthModelResponse();
-            var user = await _userManager.FindByNameAsync(tokenRequestModel.Email);
+            var user = await _userManager.FindByEmailAsync(tokenRequestModel.Email);
 
             if (user is null || !await _userManager.CheckPasswordAsync(user, tokenRequestModel.Password))
             {

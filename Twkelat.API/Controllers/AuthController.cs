@@ -50,7 +50,7 @@ namespace Twkelat.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> GetTokenAsync([FromBody] TokenRequestModel model)
+        public async Task<IActionResult> GetTokenAsync( TokenRequestModel model)
         {
             //check if data completed
             if (!ModelState.IsValid)
