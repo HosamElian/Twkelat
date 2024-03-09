@@ -31,7 +31,7 @@ namespace Twkelat.API.Controllers
             return Ok(result.Value);
         }
         [HttpPost("register")]
-        public async Task<IActionResult> RegisterAsync([FromBody] RegisterModel model)
+        public async Task<IActionResult> RegisterAsync(RegisterModel model)
         {
             //check if data completed
             if (!ModelState.IsValid)
@@ -50,14 +50,14 @@ namespace Twkelat.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> GetTokenAsync( TokenRequestModel model)
+        public async Task<IActionResult> GetTokenAsync( LoginModel model)
         {
             //check if data completed
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-
+            
             //check if data correct
             var result = await _authService.GetTokenAsync(model);
             if (!result.IsAuthenticated)

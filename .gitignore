@@ -82,3 +82,5 @@
 /Twkelat.API/obj/Debug/net8.0/apphost.exe
 /Twkelat.API/obj/Debug/net8.0/refint/Twkelat.API.dll
 /Twkelat.API/obj/Debug/net8.0/ref/Twkelat.API.dll
+/Twkelat.Persistence/obj/Debug/net8.0/Twkelat.Persistence.csproj.CoreCompileInputs.cache
+/Twkelat.EF/obj/Debug/net8.0/Twkelat.EF.csproj.CoreCompileInputs.cache

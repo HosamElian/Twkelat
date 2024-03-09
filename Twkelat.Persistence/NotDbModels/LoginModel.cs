@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Twkelat.Persistence.NotDbModels
 {
-    public class TokenRequestModel
+    public class LoginModel
     {
         [Required]
         public string Email { get; set; }
