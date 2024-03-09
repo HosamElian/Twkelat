@@ -15,13 +15,13 @@ namespace Twkelat.EF.Repository
         }
         public async Task<IEnumerable<ApplicationUser>> GetAllAsync()
         {
-            return (IEnumerable<ApplicationUser>)await _context.Users.AsQueryable().AsNoTracking().ToListAsync();
+            return (IEnumerable<ApplicationUser>)await _context.Users.ToListAsync();
 
         }
 
         public async Task<IEnumerable<UserFroSearchDTO>> GetbyUsernameAsync(string username)
         {
-            return await _context.Users.AsQueryable().AsNoTracking()
+            return await _context.Users
                 .Where(x => x.UserName.Contains(username))
                 .Select(u => new UserFroSearchDTO { Name = u.UserName })
                 .ToListAsync();

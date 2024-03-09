@@ -41,7 +41,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "Twkelat.Persistence.NotDbModels.TokenRequestModel",
+        "Type": "Twkelat.Persistence.NotDbModels.LoginModel",
         "IsRequired": true
       }
     ],

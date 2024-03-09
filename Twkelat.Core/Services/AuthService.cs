@@ -63,6 +63,7 @@ namespace Twkelat.BusinessLogic.Services
             var userRole = await _userManager.GetRolesAsync(user);
 
             var text = jwtSecurityToken.ValidTo.ToString();
+
             return new AuthModelResponse()
             {
                 Email = user.Email,
@@ -86,7 +87,7 @@ namespace Twkelat.BusinessLogic.Services
                 authModel.Message = "Email or Password is incorrect";
                 return authModel;
             }
-
+            
             var jwtSecurityToken = await CreateJwtToken(user);
             var userRole = await _userManager.GetRolesAsync(user);
 

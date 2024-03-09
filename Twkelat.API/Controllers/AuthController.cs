@@ -5,6 +5,7 @@ using Twkelat.Persistence.NotDbModels;
 
 namespace Twkelat.API.Controllers
 {
+
     [Route("api/[controller]")]
     [ApiController]
     public class AuthController : ControllerBase
@@ -50,14 +51,14 @@ namespace Twkelat.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> GetTokenAsync( LoginModel model)
+        public async Task<IActionResult> GetTokenAsync(LoginModel model)
         {
             //check if data completed
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
             }
-            
+
             //check if data correct
             var result = await _authService.GetTokenAsync(model);
             if (!result.IsAuthenticated)
