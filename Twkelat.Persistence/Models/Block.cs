@@ -12,9 +12,6 @@ namespace Twkelat.Persistence.Models
         public byte[] PrevHash { get; set; }
         public int Nonce { get; set; } 
         public DateTime TimeStamp { get; set; } = DateTime.Now;
-        public override string ToString()
-        {
-            return $"{BitConverter.ToString(Hash).Replace("-", "")}: \n {BitConverter.ToString(PrevHash).Replace("-", "")} : \n {Nonce} {TimeStamp}";
-        }
+
     }
 }
