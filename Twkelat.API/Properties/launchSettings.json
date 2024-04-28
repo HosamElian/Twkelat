@@ -40,10 +40,9 @@
     "Phone": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "swagger",
       "windowsAuthentication": false,
       "anonymousAuthentication": true,
-      "applicationUrl": "https://172.29.144.1:7204;http://172.29.144.1:5204",
+      "applicationUrl": "http://192.168.1.3:7204;http://192.168.1.3:5204",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

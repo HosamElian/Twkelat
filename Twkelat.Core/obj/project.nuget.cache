@@ -1,12 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "1Sm8N0bNWbRxcGxXs7wF7Jfd/iFCZSj/7nRHJrHMb2F3LR2EffPpdT1nJlKaVMFYEdc+mXbdQKD9zqQr9LLZtQ==",
+  "dgSpecHash": "Mx/dUMrjkv2AK+z+/DISw5JAVrJ53S901A7sRXDCvT0YvkiWxQ+ETpxmHrLkB4Api/m0PvEZiJDAqx1b4QVPoQ==",
   "success": true,
   "projectFilePath": "E:\\FL\\TK\\Twkelat\\Twkelat.Core\\Twkelat.BusinessLogic.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\star\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\star\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",
     "C:\\Users\\star\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.2\\microsoft.aspnetcore.authentication.jwtbearer.8.0.2.nupkg.sha512",
     "C:\\Users\\star\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\8.0.2\\microsoft.aspnetcore.cryptography.internal.8.0.2.nupkg.sha512",
     "C:\\Users\\star\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\8.0.2\\microsoft.aspnetcore.cryptography.keyderivation.8.0.2.nupkg.sha512",
+    "C:\\Users\\star\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\star\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\8.0.0\\microsoft.extensions.caching.abstractions.8.0.0.nupkg.sha512",
     "C:\\Users\\star\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\8.0.0\\microsoft.extensions.dependencyinjection.8.0.0.nupkg.sha512",
     "C:\\Users\\star\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\8.0.0\\microsoft.extensions.dependencyinjection.abstractions.8.0.0.nupkg.sha512",

@@ -9,7 +9,10 @@ namespace Twkelat.Persistence.BlockExtension
             using SHA512 sha = new SHA512Managed();
             using MemoryStream ms = new MemoryStream();
             using BinaryWriter bw = new BinaryWriter(ms);
-            bw.Write(block.Data);
+            bw.Write(block.CreateForId);
+            bw.Write(block.CreateById);
+            bw.Write(block.PowerAttorneyTypeId);
+            bw.Write(block.Scope);
             bw.Write(block.Nonce);
             bw.Write(block.PrevHash);
             bw.Write(block.TimeStamp.ToString());
@@ -20,7 +23,7 @@ namespace Twkelat.Persistence.BlockExtension
         {
             if (difficulty == null) throw new ArgumentNullException(nameof(difficulty));
 
-            byte[] hash = new byte[0];
+            byte[] hash = Array.Empty<byte>();
             while (!hash.Take(2).SequenceEqual(difficulty))
             {
                 block.Nonce++;

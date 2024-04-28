@@ -12,7 +12,8 @@ namespace Twkelat.Persistence.NotDbModels
         public Result()
         {
             Message = ResultMessages.ProcessNotCompleted;
-            
+            IsCompleted = false;
+            Value = null;
         }
         public bool IsCompleted { get; set; }
         public string Message { get; set; }

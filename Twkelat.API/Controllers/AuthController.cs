@@ -19,19 +19,9 @@ namespace Twkelat.API.Controllers
             _userService = userService;
         }
 
-        [HttpGet("GetUsers")]
-        public async Task<IActionResult> GetUsers(string username)
-        {
-
-            if (string.IsNullOrEmpty(username)) return BadRequest(BadRequestMessages.PleaseProvideAValidUsername);
-
-            var result = await _userService.GetUsers(username);
-
-            if (!result.IsCompleted) return BadRequest(result.Message);
-
-            return Ok(result.Value);
-        }
         [HttpPost("register")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> RegisterAsync(RegisterModel model)
         {
             //check if data completed
@@ -51,7 +41,9 @@ namespace Twkelat.API.Controllers
         }
 
         [HttpPost("login")]
-        public async Task<IActionResult> GetTokenAsync(LoginModel model)
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        public async Task<IActionResult> LoginAsync(LoginModel model)
         {
             //check if data completed
             if (!ModelState.IsValid)
@@ -69,6 +61,8 @@ namespace Twkelat.API.Controllers
         }
 
         [HttpPost("addrole")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> AddRoleAsync([FromBody] AddRoleModel model)
         {
 

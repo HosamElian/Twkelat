@@ -16,6 +16,7 @@ namespace Twkelat.API.Extensions
                 option.UseSqlServer(config.GetConnectionString("DefaultConnection")));
             services.AddScoped<IAuthService, AuthService>();
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ITwkelatService, TwkelatService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
             services.AddCors();

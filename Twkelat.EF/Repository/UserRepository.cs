@@ -26,5 +26,9 @@ namespace Twkelat.EF.Repository
                 .Select(u => new UserFroSearchDTO { Name = u.UserName })
                 .ToListAsync();
         }
+        public async Task<ApplicationUser> GetbyCivilIdAsync(string civilId)
+        {
+            return await _context.Users.FirstOrDefaultAsync(x => x.CivilId == civilId);
+        }
     }
 }

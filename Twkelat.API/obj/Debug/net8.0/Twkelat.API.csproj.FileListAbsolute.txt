@@ -148,3 +148,5 @@ E:\FL\TK\Twkelat\Twkelat.API\obj\Debug\net8.0\refint\Twkelat.API.dll
 E:\FL\TK\Twkelat\Twkelat.API\obj\Debug\net8.0\Twkelat.API.pdb
 E:\FL\TK\Twkelat\Twkelat.API\obj\Debug\net8.0\Twkelat.API.genruntimeconfig.cache
 E:\FL\TK\Twkelat\Twkelat.API\obj\Debug\net8.0\ref\Twkelat.API.dll
+E:\FL\TK\Twkelat\Twkelat.API\bin\Debug\net8.0\AutoMapper.dll
+E:\FL\TK\Twkelat\Twkelat.API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

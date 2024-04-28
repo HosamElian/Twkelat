@@ -8,14 +8,16 @@ namespace Twkelat.EF.Repository
 
         public UnitOfWork(ApplicationDbContext context)
         {
-            RoleRepository = new RoleRepository(context);
-            UserRepository = new UserRepository(context);
+            Role = new RoleRepository(context);
+            User = new UserRepository(context);
+            TwkelateChain = new TwkelateRepository(context);
             _context = context;
         }
 
-        public IRoleRepository RoleRepository { get; private set; }
+        public IRoleRepository Role { get; private set; }
 
-        public IUserRepository UserRepository { get; private set; }
+        public IUserRepository User { get; private set; }
+        public ITwkelateRepository TwkelateChain { get; private set; }
 
 
         public async Task<bool> Save()

@@ -2,8 +2,9 @@
 {
     public interface IUnitOfWork
     {
-        IRoleRepository RoleRepository { get; }
-        IUserRepository UserRepository { get; }
+        IRoleRepository Role { get; }
+        IUserRepository User { get; }
+        ITwkelateRepository TwkelateChain { get; }
 
         Task<bool> Save();
     }

@@ -7,6 +7,6 @@ namespace Twkelat.Persistence.Interfaces.IRepository
     {
         Task<IEnumerable<ApplicationUser>> GetAllAsync();
         Task<IEnumerable<UserFroSearchDTO>> GetbyUsernameAsync(string username);
-
+        Task<ApplicationUser> GetbyCivilIdAsync(string civilId);
     }
 }

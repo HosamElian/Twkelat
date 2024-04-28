@@ -16,7 +16,7 @@ namespace Twkelat.BusinessLogic.Services
         public async Task<Result> GetUsers(string username)
         {
 
-            var usersFromDb = await _unitOfWork.UserRepository.GetbyUsernameAsync(username);
+            var usersFromDb = await _unitOfWork.User.GetbyUsernameAsync(username);
             if (usersFromDb is not null)
             {
 

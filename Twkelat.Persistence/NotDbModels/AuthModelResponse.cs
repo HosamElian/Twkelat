@@ -3,7 +3,7 @@
     public class AuthModelResponse
     {
         public bool IsAuthenticated { get; set; }
-        public string Email { get; set; }
+        public string CivilId { get; set; }
         public string Username { get; set; }
         public string Message { get; set; }
         public string Token { get; set; }

@@ -3,10 +3,12 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
 namespace Twkelat.EF.Migrations
 {
     /// <inheritdoc />
-    public partial class INITModel : Migration
+    public partial class INITMODEL : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -30,7 +32,10 @@ namespace Twkelat.EF.Migrations
                 columns: table => new
                 {
                     Id = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Discriminator = table.Column<string>(type: "nvarchar(21)", maxLength: 21, nullable: false),
+                    FirstName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    LastName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CivilId = table.Column<string>(type: "nvarchar(450)", nullable: true),
                     UserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     NormalizedUserName = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
                     Email = table.Column<string>(type: "nvarchar(256)", maxLength: 256, nullable: true),
@@ -49,6 +54,32 @@ namespace Twkelat.EF.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PowerAttorneyTypes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PowerAttorneyTypes", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Templetes",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Templetes", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -90,7 +121,7 @@ namespace Twkelat.EF.Migrations
                         column: x => x.UserId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction        );
+                        onDelete: ReferentialAction.NoAction);
                 });
 
             migrationBuilder.CreateTable(
@@ -163,11 +194,21 @@ namespace Twkelat.EF.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    CreatedById = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    Active = table.Column<bool>(type: "bit", nullable: false),
                     Hash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     PrevHash = table.Column<byte[]>(type: "varbinary(max)", nullable: false),
                     Nonce = table.Column<int>(type: "int", nullable: false),
-                    TimeStamp = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    TempleteId = table.Column<int>(type: "int", nullable: false),
+                    PowerAttorneyTypeId = table.Column<int>(type: "int", nullable: false),
+                    CreateForId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateById = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Scope = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateForCivilId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    CreateByCivilId = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    TimeStamp = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    ExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    CreatedById = table.Column<string>(type: "nvarchar(450)", nullable: false),
+                    CreatedForId = table.Column<string>(type: "nvarchar(450)", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -178,88 +219,56 @@ namespace Twkelat.EF.Migrations
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Documents",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedById = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UpdatedById = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    Title = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    Content = table.Column<byte[]>(type: "varbinary(max)", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Documents", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Documents_AspNetUsers_CreatedById",
-                        column: x => x.CreatedById,
+                        name: "FK_Blocks_AspNetUsers_CreatedForId",
+                        column: x => x.CreatedForId,
                         principalTable: "AspNetUsers",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
                     table.ForeignKey(
-                        name: "FK_Documents_AspNetUsers_UpdatedById",
-                        column: x => x.UpdatedById,
-                        principalTable: "AspNetUsers",
+                        name: "FK_Blocks_PowerAttorneyTypes_PowerAttorneyTypeId",
+                        column: x => x.PowerAttorneyTypeId,
+                        principalTable: "PowerAttorneyTypes",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.NoAction);
+                    table.ForeignKey(
+                        name: "FK_Blocks_Templetes_TempleteId",
+                        column: x => x.TempleteId,
+                        principalTable: "Templetes",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.NoAction);
                 });
 
-            migrationBuilder.CreateTable(
-                name: "Delegations",
-                columns: table => new
+            migrationBuilder.InsertData(
+                table: "AspNetRoles",
+                columns: new[] { "Id", "ConcurrencyStamp", "Name", "NormalizedName" },
+                values: new object[,]
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    CreateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    UpdateAt = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    CreatedById = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    UpdatedById = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    DocumentId = table.Column<int>(type: "int", nullable: false),
-                    ClientId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    AgentId = table.Column<string>(type: "nvarchar(450)", nullable: false),
-                    IsValid = table.Column<bool>(type: "bit", nullable: false),
-                    ExpirationDate = table.Column<DateTime>(type: "datetime2", nullable: false)
-                },
-                constraints: table =>
+                    { "8f22fda0-31cd-479e-b291-a6fda6f9f88f", "ab6c7929-7f32-4787-b2a4-971a68b11937", "Admin", "ADMIN" },
+                    { "fb496a34-6aac-421a-a1fd-ce07a66381ce", "3aa79902-31e0-45e1-8b83-1f8406127996", "User", "USER" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "PowerAttorneyTypes",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
                 {
-                    table.PrimaryKey("PK_Delegations", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Delegations_AspNetUsers_AgentId",
-                        column: x => x.AgentId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Delegations_AspNetUsers_ClientId",
-                        column: x => x.ClientId,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Delegations_AspNetUsers_CreatedById",
-                        column: x => x.CreatedById,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Delegations_AspNetUsers_UpdatedById",
-                        column: x => x.UpdatedById,
-                        principalTable: "AspNetUsers",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
-                    table.ForeignKey(
-                        name: "FK_Delegations_Documents_DocumentId",
-                        column: x => x.DocumentId,
-                        principalTable: "Documents",
-                        principalColumn: "Id",
-                        onDelete: ReferentialAction.NoAction);
+                    { 1, "Public" },
+                    { 2, "Private" }
+                });
+
+            migrationBuilder.InsertData(
+                table: "Templetes",
+                columns: new[] { "Id", "Name" },
+                values: new object[,]
+                {
+                    { 1, "Lawsuits" },
+                    { 2, "Driving" },
+                    { 3, "Review all ministries" },
+                    { 4, "marriage" },
+                    { 5, "Bank transaction" },
+                    { 6, "Company Creation" },
+                    { 7, "Company modification" }
                 });
 
             migrationBuilder.CreateIndex(
@@ -295,6 +304,13 @@ namespace Twkelat.EF.Migrations
                 column: "NormalizedEmail");
 
             migrationBuilder.CreateIndex(
+                name: "IX_AspNetUsers_CivilId",
+                table: "AspNetUsers",
+                column: "CivilId",
+                unique: true,
+                filter: "[CivilId] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
                 name: "UserNameIndex",
                 table: "AspNetUsers",
                 column: "NormalizedUserName",
@@ -307,39 +323,19 @@ namespace Twkelat.EF.Migrations
                 column: "CreatedById");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Delegations_AgentId",
-                table: "Delegations",
-                column: "AgentId");
+                name: "IX_Blocks_CreatedForId",
+                table: "Blocks",
+                column: "CreatedForId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Delegations_ClientId",
-                table: "Delegations",
-                column: "ClientId");
+                name: "IX_Blocks_PowerAttorneyTypeId",
+                table: "Blocks",
+                column: "PowerAttorneyTypeId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Delegations_CreatedById",
-                table: "Delegations",
-                column: "CreatedById");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Delegations_DocumentId",
-                table: "Delegations",
-                column: "DocumentId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Delegations_UpdatedById",
-                table: "Delegations",
-                column: "UpdatedById");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Documents_CreatedById",
-                table: "Documents",
-                column: "CreatedById");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_Documents_UpdatedById",
-                table: "Documents",
-                column: "UpdatedById");
+                name: "IX_Blocks_TempleteId",
+                table: "Blocks",
+                column: "TempleteId");
         }
 
         /// <inheritdoc />
@@ -364,16 +360,16 @@ namespace Twkelat.EF.Migrations
                 name: "Blocks");
 
             migrationBuilder.DropTable(
-                name: "Delegations");
-
-            migrationBuilder.DropTable(
                 name: "AspNetRoles");
 
             migrationBuilder.DropTable(
-                name: "Documents");
+                name: "AspNetUsers");
 
             migrationBuilder.DropTable(
-                name: "AspNetUsers");
+                name: "PowerAttorneyTypes");
+
+            migrationBuilder.DropTable(
+                name: "Templetes");
         }
     }
 }
