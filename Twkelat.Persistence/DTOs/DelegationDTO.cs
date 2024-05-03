@@ -13,7 +13,8 @@ namespace Twkelat.Persistence.DTOs
         public string CommissionerName { get; set; }
         public byte[] Hash { get; set; }
         public DateTime ExpirationDate { get; set; }
-        public bool FromMe { get; set; }
+		public string ExpirationDateAsString { get; set; }
+		public bool FromMe { get; set; }
 
     }
 }

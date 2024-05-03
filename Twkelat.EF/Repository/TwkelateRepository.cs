@@ -11,7 +11,7 @@ using Twkelat.Persistence.Models;
 
 namespace Twkelat.EF.Repository
 {
-    public class TwkelateRepository : ITwkelateRepository
+	public class TwkelateRepository : ITwkelateRepository
     {
         private readonly ApplicationDbContext _context;
 
@@ -35,7 +35,31 @@ namespace Twkelat.EF.Repository
                 .ToList();
         }
 
-        public Block? GetLastBlcok()
+		public IEnumerable<Block> GetAll(bool admin, string civilId)
+		{
+            if (admin)
+            {
+				return _context.Blocks
+			  .Include(c => c.CreatedFor)
+			  .Include(c => c.CreatedBy)
+			  .Include(c => c.Templete)
+			  .Include(c => c.PowerAttorneyType)
+			  .AsNoTracking()
+			  .ToList();
+			}
+			return _context.Blocks
+                .Where(b=>b.CreateByCivilId.ToLower() == civilId.ToLower() || 
+                            b.CreateForCivilId.ToLower() == civilId.ToLower())
+			  .Include(c => c.CreatedFor)
+			  .Include(c => c.CreatedBy)
+			  .Include(c => c.Templete)
+			  .Include(c => c.PowerAttorneyType)
+			  .AsNoTracking()
+			  .ToList();
+
+		}
+
+		public Block? GetLastBlcok()
         {
             return _context.Blocks.OrderBy(c=>c.Nonce).LastOrDefault();
         }

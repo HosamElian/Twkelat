@@ -36,27 +36,6 @@ namespace Twkelat.EF
                 new PowerAttorneyType { Id = 1, Name = "Public" },
                 new PowerAttorneyType { Id = 2, Name = "Private" }
                 );
-
-            
-            builder.Entity<IdentityRole>()
-                .HasData([
-                new IdentityRole
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Name = "User",
-                    ConcurrencyStamp = Guid.NewGuid().ToString(),
-                    NormalizedName = "USER".ToUpper()
-                },
-                 new IdentityRole
-                {
-                    Id = Guid.NewGuid().ToString(),
-                    Name = "Admin",
-                    ConcurrencyStamp = Guid.NewGuid().ToString(),
-                    NormalizedName = "Admin".ToUpper()
-                },
-
-                ]);
-            
         }
     }
 }

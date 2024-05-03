@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Twkelat.API.Extensions;
 using Twkelat.API.Middleware;
+using Twkelat.BusinessLogic.Services;
 using Twkelat.EF;
 using Twkelat.Persistence.Helpers;
 using Twkelat.Persistence.Mapping;
@@ -89,6 +90,7 @@ if (app.Environment.IsDevelopment())
     //app.UseSwaggerUI();
 }
 
+SeedDatabase();
 //app.UseHttpsRedirection();
 app.UseAuthentication();
 app.UseAuthorization();
@@ -96,3 +98,13 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+void SeedDatabase()
+{
+	using (var scope = app.Services.CreateScope())
+	{
+		var dbInitializer = scope.ServiceProvider.GetRequiredService<ApplicationInitializer>();
+		dbInitializer.Initialize();
+	}
+}

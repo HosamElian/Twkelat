@@ -6,8 +6,8 @@ namespace Twkelat.Persistence.NotDbModels
     {
         [Required]
         public string CivilId { get; set; }
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
+        public string Name { get; set; }
+        public string Email { get; set; }
         [Required]
         public string Username { get; set; }
         [Required]

@@ -1,5 +1,8 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Identity;
+using System.Reflection;
 using System.Text;
+using Twkelat.Persistence;
 using Twkelat.Persistence.BlockExtension;
 using Twkelat.Persistence.Consts;
 using Twkelat.Persistence.DTOs;
@@ -14,12 +17,16 @@ namespace Twkelat.BusinessLogic.Services
     {
         private readonly IUnitOfWork _unitOfWork;
         private readonly IMapper _mapper;
+		private readonly UserManager<ApplicationUser> _userManager;
 
-        public TwkelatService(IUnitOfWork unitOfWork, IMapper mapper)
+		public TwkelatService(IUnitOfWork unitOfWork,
+            IMapper mapper,
+            UserManager<ApplicationUser> userManager)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
-        }
+			_userManager = userManager;
+		}
         public Result AddNewBlock(CreateBlockDTO model)
         {
             Block block = new();
@@ -72,13 +79,22 @@ namespace Twkelat.BusinessLogic.Services
         }
 
         public Result GetAllBlcoksAsync(string civilId)
-        {
-            var chain = _unitOfWork.TwkelateChain.GetAll();
+		{
+            var isAdmin = false;
+            var user = _unitOfWork.User.GetbyCivilIdAsync(civilId).Result;
+            var userRoles = _userManager.GetRolesAsync(user).GetAwaiter().GetResult();
+
+			if (userRoles.Contains(SD.Role_Admin))
+            {
+                isAdmin = true;
+            }
+			var chain = _unitOfWork.TwkelateChain.GetAll(isAdmin, civilId);
             if (!chain.Any()) return new Result() { Message = ResultMessages.NoBlocksFound};
             var data = chain.Select(c => new DelegationDTO
             {
-                CommissionerName = c.CreatedFor?.FirstName ?? "Name",
+                CommissionerName = c.CreatedFor?.Name ?? "Name",
                 ExpirationDate = c.ExpirationDate,
+                ExpirationDateAsString = c.ExpirationDate.ToString("dd/MM/yyyy"),
                 Hash = c.Hash,
                 Id = c.Id,
                 TempleteName = c.Templete.Name ?? "Public",
@@ -99,9 +115,10 @@ namespace Twkelat.BusinessLogic.Services
              
             var data = new DelegationVMDTO
             {
-                CommissionerName = chain.CreatedFor?.FirstName ?? "Name",
+                CommissionerName = chain.CreatedFor?.Name ?? "Name",
                 ExpirationDate = chain.ExpirationDate,
-                Hash = chain.Hash,
+                ExpirationDateAsString = chain.ExpirationDate.ToString("dd/MM/yyyy"),
+				Hash = chain.Hash,
                 Id = chain.Id,
                 TempleteName = chain.Templete.Name ?? "Temp",
                 FromMe = true,

@@ -11,8 +11,9 @@ namespace Twkelat.Persistence.Interfaces.IRepository
     public interface ITwkelateRepository
     {
         Block? GetTwkelatBlockById(int id); 
-        IEnumerable<Block> GetAll();
-        void AddBlcok(Block blcok);
+        //IEnumerable<Block> GetAll();
+        IEnumerable<Block> GetAll(bool admin, string civilId);
+		void AddBlcok(Block blcok);
         bool UpdateBlcok(ChangeValidState model);
         Block? GetLastBlcok();
     }

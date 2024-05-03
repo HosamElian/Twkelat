@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Twkelat.Persistence.Consts;
+using Twkelat.Persistence.DTOs;
 using Twkelat.Persistence.Interfaces.IServices;
 using Twkelat.Persistence.NotDbModels;
 
@@ -52,15 +53,69 @@ namespace Twkelat.API.Controllers
             }
 
             //check if data correct
-            var result = await _authService.GetTokenAsync(model);
+            var result = await _authService.Login(model);
             if (!result.IsAuthenticated)
             {
                 return BadRequest(result.Message);
             }
             return Ok(result);
         }
+		[HttpPost("checkCode")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
+		public async Task<IActionResult> CheckCode(CheckRequestDTO model)
+		{
+			//check if data completed
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
 
-        [HttpPost("addrole")]
+			//check if data correct
+			var result = await _authService.CheckRequest(model);
+			if (result)
+			{
+				return Ok(new APIResponse
+                {
+                    StatusCode = System.Net.HttpStatusCode.OK,
+                    IsSuccess = true,
+                });
+			}
+			return Ok(new APIResponse{
+				StatusCode = System.Net.HttpStatusCode.Unauthorized,
+                    IsSuccess = false,
+                });
+		}
+
+		[HttpPost("changeCode")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
+		public async Task<IActionResult> ChangeCode(ChangeCodeRequestDTO model)
+		{
+			//check if data completed
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			//check if data correct
+			var result = await _authService.ChangeCodeRequest(model);
+			if (result)
+			{
+				return Ok(new APIResponse
+				{
+					StatusCode = System.Net.HttpStatusCode.OK,
+					IsSuccess = true,
+				});
+			}
+			return Ok(new APIResponse
+			{
+				StatusCode = System.Net.HttpStatusCode.Unauthorized,
+				IsSuccess = false,
+			});
+		}
+
+		[HttpPost("addrole")]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         public async Task<IActionResult> AddRoleAsync([FromBody] AddRoleModel model)

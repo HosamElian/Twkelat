@@ -5,6 +5,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using Twkelat.Persistence;
+using Twkelat.Persistence.DTOs;
 using Twkelat.Persistence.Helpers;
 using Twkelat.Persistence.Interfaces.IRepository;
 using Twkelat.Persistence.Interfaces.IServices;
@@ -13,22 +14,25 @@ using Twkelat.Persistence.NotDbModels;
 
 namespace Twkelat.BusinessLogic.Services
 {
-    public class AuthService : IAuthService
+	public class AuthService : IAuthService
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly JWT _jwt;
+		private readonly IEmailSender _emailSender;
+		private readonly JWT _jwt;
 
         public AuthService(UserManager<ApplicationUser> userManager,
                             RoleManager<IdentityRole> roleManager,
                             IOptions<JWT> Jwt,
-                            IUnitOfWork unitOfWork)
+                            IUnitOfWork unitOfWork,
+                            IEmailSender emailSender)
         {
             _userManager = userManager;
             _roleManager = roleManager;
             _unitOfWork = unitOfWork;
-            _jwt = Jwt.Value;
+			_emailSender = emailSender;
+			_jwt = Jwt.Value;
         }
 
         public async Task<AuthModelResponse> RegisterAsync(RegisterModel registerModel)
@@ -41,13 +45,13 @@ namespace Twkelat.BusinessLogic.Services
             {
                 return new AuthModelResponse() { Message = "Username is Already register" };
             }
-
+            
             var user = new ApplicationUser()
             {
                 UserName = registerModel.Username,
                 CivilId = registerModel.CivilId,
-                FirstName = registerModel.FirstName,
-                LastName = registerModel.LastName,
+                Name = registerModel.Name,
+                Email = registerModel.Email,
                 SecretKey = GenerateRandomString()
             };
 
@@ -61,11 +65,7 @@ namespace Twkelat.BusinessLogic.Services
                 }
                 return new AuthModelResponse() { Message = errors };
             }
-            if (!_roleManager.RoleExistsAsync(SD.Role_User).Result)
-            {
-                await _roleManager.CreateAsync(new IdentityRole(SD.Role_User));
-                await _roleManager.CreateAsync(new IdentityRole(SD.Role_Admin));
-            }
+
             await _userManager.AddToRoleAsync(user, SD.Role_User);
 
             var jwtSecurityToken = await CreateJwtToken(user);
@@ -74,19 +74,24 @@ namespace Twkelat.BusinessLogic.Services
 
             var text = jwtSecurityToken.ValidTo.ToString();
 
-            return new AuthModelResponse()
+            var emailMsg = $"Dear {user.Name}\nYour Authentication Code is {user.SecretKey}";
+            if(user.Email != null)
+            {
+				 _emailSender.Send(emailMsg, user.Email);
+			}
+			return new AuthModelResponse()
             {
                 CivilId = user.CivilId,
                 ExpiresOn = text,
                 IsAuthenticated = true,
                 Username = user.UserName,
                 Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
-                Image = user.Image,
+                Image = user.Image ?? "",
                 Roles = userRole
             };
         }
 
-        public async Task<AuthModelResponse> GetTokenAsync(LoginModel tokenRequestModel)
+        public async Task<AuthModelResponse> Login(LoginModel tokenRequestModel)
         {
             var authModel = new AuthModelResponse();
             var user = await _unitOfWork.User.GetbyCivilIdAsync(tokenRequestModel.CivilId);
@@ -173,5 +178,22 @@ namespace Twkelat.BusinessLogic.Services
                 .Select(s => s[new Random().Next(s.Length)]).ToArray());
         }
 
-    }
+		public async Task<bool> CheckRequest(CheckRequestDTO checkRequest)
+		{
+			var user = await _unitOfWork.User.GetbyCivilIdAsync(checkRequest.CivilId);
+            if(user.SecretKey == checkRequest.Key) return true;
+            return false;
+		}
+
+		public async Task<bool> ChangeCodeRequest(ChangeCodeRequestDTO codeRequest)
+		{
+			var user = await _unitOfWork.User.GetbyCivilIdAsync(codeRequest.CivilId);
+			if (user.SecretKey == codeRequest.OldCode)
+            {
+                user.SecretKey = codeRequest.NewCode;
+                if(await _unitOfWork.Save()) return true;
+			}
+			return false;
+		}
+	}
 }

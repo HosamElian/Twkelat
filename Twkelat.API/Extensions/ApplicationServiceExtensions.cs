@@ -18,8 +18,10 @@ namespace Twkelat.API.Extensions
             services.AddScoped<IUserService, UserService>();
             services.AddScoped<ITwkelatService, TwkelatService>();
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddScoped<IEmailSender, EmailSender>();
+            services.AddScoped<IApplicationInitializer, ApplicationInitializer>();
 
-            services.AddCors();
+			services.AddCors();
             return services;
         }
     }
