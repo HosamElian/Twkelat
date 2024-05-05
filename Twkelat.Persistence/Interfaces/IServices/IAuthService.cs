@@ -9,6 +9,7 @@ namespace Twkelat.Persistence.Interfaces.IServices
         Task<AuthModelResponse> Login(LoginModel tokenRequestModel);
         Task<string> AddRoleAsync(AddRoleModel addRoleModel);
         Task<bool> CheckRequest(CheckRequestDTO checkRequest);
-        Task<bool> ChangeCodeRequest(ChangeCodeRequestDTO codeRequest);
+        Task<bool> ChangePassword(ChangeCodeRequestDTO codeRequest);
+		Task<bool> GenerateCodeRequest(string civilId);
 	}
 }

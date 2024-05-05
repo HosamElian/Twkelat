@@ -9,6 +9,5 @@ namespace Twkelat.Persistence.Models
         public string? Image { get; set; }
         [Key]
         public string CivilId { get; set; }
-        public string SecretKey { get; set; }
     }
 }

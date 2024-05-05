@@ -99,7 +99,35 @@ namespace Twkelat.API.Controllers
 			}
 
 			//check if data correct
-			var result = await _authService.ChangeCodeRequest(model);
+			var result = await _authService.ChangePassword(model);
+			if (result)
+			{
+				return Ok(new APIResponse
+				{
+					StatusCode = System.Net.HttpStatusCode.OK,
+					IsSuccess = true,
+				});
+			}
+			return Ok(new APIResponse
+			{
+				StatusCode = System.Net.HttpStatusCode.Unauthorized,
+				IsSuccess = false,
+			});
+		}
+
+		[HttpGet("generateCode")]
+		[ProducesResponseType(StatusCodes.Status200OK)]
+		[ProducesResponseType(StatusCodes.Status400BadRequest)]
+		public async Task<IActionResult> generateCode(string CivilId)
+		{
+			//check if data completed
+			if (!ModelState.IsValid)
+			{
+				return BadRequest(ModelState);
+			}
+
+			//check if data correct
+			var result = await _authService.GenerateCodeRequest(CivilId);
 			if (result)
 			{
 				return Ok(new APIResponse

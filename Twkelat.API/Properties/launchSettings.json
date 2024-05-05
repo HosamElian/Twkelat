@@ -42,7 +42,7 @@
       "launchBrowser": true,
       "windowsAuthentication": false,
       "anonymousAuthentication": true,
-      "applicationUrl": "http://192.168.1.6:7204;http://192.168.1.6:5204",
+      "applicationUrl": "http://192.168.1.2:7204;http://192.168.1.2:5204",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

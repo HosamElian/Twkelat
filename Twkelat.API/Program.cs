@@ -8,6 +8,7 @@ using Twkelat.API.Middleware;
 using Twkelat.BusinessLogic.Services;
 using Twkelat.EF;
 using Twkelat.Persistence.Helpers;
+using Twkelat.Persistence.Interfaces.IServices;
 using Twkelat.Persistence.Mapping;
 using Twkelat.Persistence.Models;
 
@@ -102,9 +103,9 @@ app.Run();
 
 void SeedDatabase()
 {
-	using (var scope = app.Services.CreateScope())
-	{
-		var dbInitializer = scope.ServiceProvider.GetRequiredService<ApplicationInitializer>();
-		dbInitializer.Initialize();
-	}
+	//using (var scope = app.Services.CreateScope())
+	//{
+	//	var dbInitializer = scope.ServiceProvider.GetRequiredService<IApplicationInitializer>();
+	//	dbInitializer.Initialize();
+	//}
 }

@@ -34,14 +34,13 @@ namespace Twkelat.BusinessLogic.Services
 
 			var user = new ApplicationUser()
 			{
-				UserName = "Username",
-				CivilId = "CivilId",
-				Name = "Name",
-				Email = "Email",
-				SecretKey = ""
+				UserName = "Mohamed01",
+				CivilId = "000111222333",
+				Name = "Mohamed",
+				Email = "mohammedartie@gmail.com",
 			};
 
-			var result = _userManager.CreateAsync(user, "Password").GetAwaiter().GetResult();
+			var result = _userManager.CreateAsync(user, "000111222333").GetAwaiter().GetResult();
 			_userManager.AddToRoleAsync(user, SD.Role_Admin).GetAwaiter().GetResult();
 			return;
 		}

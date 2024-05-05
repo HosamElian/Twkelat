@@ -16,5 +16,8 @@ namespace Twkelat.Persistence.Interfaces.IRepository
 		void AddBlcok(Block blcok);
         bool UpdateBlcok(ChangeValidState model);
         Block? GetLastBlcok();
-    }
+        void AddUserTempCode(UsersTempCode usersTempCode);
+        string GetUserTempCode(string CivilID);
+
+	}
 }

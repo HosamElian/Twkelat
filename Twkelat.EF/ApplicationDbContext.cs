@@ -12,7 +12,7 @@ namespace Twkelat.EF
         public DbSet<PowerAttorneyType> PowerAttorneyTypes { get; set; }
         public DbSet<Templete> Templetes { get; set; }
 
-
+        public DbSet<UsersTempCode> usersTempCodes { get; set; }
         protected override void OnModelCreating(ModelBuilder builder)
         {
             base.OnModelCreating(builder);
